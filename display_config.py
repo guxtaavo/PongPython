@@ -1,7 +1,8 @@
-class Config:
-    def __init__(self, width, height, x, y) -> None:
+class DisplayConfig:
+    def __init__(self, width, height, color) -> None:
         self._width = width
         self._height = height
+        self._color = color
 
     @property
     def width(self):
@@ -18,3 +19,11 @@ class Config:
     @heigth.setter
     def heigth(self, new_height):
         self._height = new_height
+
+    @property
+    def color(self):
+        return self._color
+    
+    @color.setter
+    def color(self, color):
+        self._color = color
