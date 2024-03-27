@@ -1,26 +1,17 @@
+import pygame
+from display_config import DisplayConfig
+from random import randint
+
 class Ball:
-    def __init__(self, surface, color, center, radius) -> None:
-        self._surface = surface
-        self._color = color
-        self._center = center
-        self._radius = radius
+    def __init__(self, x, y) -> None:
+        self._x = x
+        self._y = y
+        self._color = 'blue'
+        self._width = 30
+        self._height = 30
 
-    @property
-    def surface(self):
-        return self._surface
+    def update(self):
+        ...
 
-    @property
-    def color(self):
-        return self._color
-
-    @property
-    def center(self):
-         return self._center
-
-    @center.setter
-    def center(self, center):
-        self._center = center
-
-    @property
-    def radius(self):
-        return self._radius
+    def draw(self, screen):
+        pygame.draw.rect(screen, self._color, (self._x, self._y, self._width, self._height))
